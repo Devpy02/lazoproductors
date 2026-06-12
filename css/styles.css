@@ -26,6 +26,7 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-background);
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -189,6 +190,18 @@ a:hover {
   transform: translateY(-5px);
 }
 
+@media (max-width: var(--breakpoint-tablet)) {
+  .card {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .card {
+    padding: var(--space-sm);
+  }
+}
+
 /* DIVISOR DECORATIVO */
 .divider {
   width: 100%;
@@ -289,6 +302,10 @@ section {
 }
 
 @media (max-width: var(--breakpoint-tablet)) {
+  .grid {
+    gap: var(--space-md);
+  }
+
   .grid-2,
   .grid-3,
   .grid-4,
@@ -298,6 +315,10 @@ section {
 }
 
 @media (max-width: var(--breakpoint-mobile)) {
+  .grid {
+    gap: var(--space-sm);
+  }
+
   .grid-2,
   .grid-3,
   .grid-4,

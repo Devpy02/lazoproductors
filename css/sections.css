@@ -407,7 +407,7 @@
 }
 
 .activity-card:hover {
-  background-color: rgba(45, 80, 22, 0.05); /* Verde muy claro */
+  background-color: rgba(45, 80, 22, 0.05);
   border-color: var(--color-secondary);
   transform: translateY(-5px);
 }
@@ -420,6 +420,35 @@
 .activity-card h4 {
   color: var(--color-primary);
   margin-bottom: var(--space-sm);
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .activity-card {
+    padding: var(--space-md);
+  }
+
+  .activity-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .activity-card {
+    padding: var(--space-sm);
+  }
+
+  .activity-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .activity-card h4 {
+    font-size: 1rem;
+  }
+
+  .activity-card p {
+    font-size: 0.875rem;
+  }
 }
 
 /* ========================================
@@ -756,10 +785,31 @@
     flex-direction: column;
   }
   
+  .step-box {
+    padding: var(--space-md);
+    min-width: unset;
+  }
+  
   .step-connector {
     display: block;
     transform: rotate(90deg);
     margin: var(--space-md) 0;
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .step-box {
+    padding: var(--space-sm);
+  }
+
+  .step-num {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .step-connector {
+    font-size: 1.25rem;
   }
 }
 
