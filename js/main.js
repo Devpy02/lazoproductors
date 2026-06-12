@@ -69,14 +69,14 @@ const STORIES = [
 
 // Galería
 const GALLERY = [
-  { image: '../assets/images/campo.jpg', alt: 'Campo' },
-  { image: '../assets/images/atardecer.jpg', alt: 'Atardecer en la finca' },
-  { image: '../assets/images/trabajando.jpg', alt: 'Don Pedro trabajando' },
-  { image: '../assets/images/tradicional.jpg', alt: 'Comida tradicional' },
-  { image: '../assets/images/manos.png', alt: 'Manos en el tabaco' },
-  { image: '../assets/images/secadero.jpg', alt: 'Secadero tradicional' },
-  { image: '../assets/images/visitantes.jpg', alt: 'Grupo de visitantes' },
-  { image: '../assets/images/proyecto_social.jpg', alt: 'Proyecto social' }
+  { image: 'assets/images/campo.jpg', alt: 'Campo' },
+  { image: 'assets/images/atardecer.jpg', alt: 'Atardecer en la finca' },
+  { image: 'assets/images/trabajando.jpg', alt: 'Don Pedro trabajando' },
+  { image: 'assets/images/tradicional.jpg', alt: 'Comida tradicional' },
+  { image: 'assets/images/manos.png', alt: 'Manos en el tabaco' },
+  { image: 'assets/images/secadero.jpg', alt: 'Secadero tradicional' },
+  { image: 'assets/images/visitantes.jpg', alt: 'Grupo de visitantes' },
+  { image: 'assets/images/proyecto_social.jpg', alt: 'Proyecto social' }
 ];
 
 // ========================================
