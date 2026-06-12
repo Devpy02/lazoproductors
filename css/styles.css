@@ -1,0 +1,486 @@
+/* ========================================
+   ESTILOS PRINCIPALES
+   ======================================== */
+
+@import 'variables.css';
+@import 'animations.css';
+
+/* ========================================
+   RESET CSS
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* ========================================
+   TIPOGRAFÍA GLOBAL
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-elegant);
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-cta);
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+}
+
+/* ========================================
+   COMPONENTES REUTILIZABLES
+   ======================================== */
+
+/* BOTÓN GENÉRICO */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-accent);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Variantes de botón */
+.btn-primary {
+  background-color: var(--color-cta);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #B64A2E;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* TARJETA */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+/* DIVISOR DECORATIVO */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+  margin: var(--space-xl) 0;
+  opacity: 0.5;
+}
+
+.divider-dashed {
+  border-top: 2px dashed var(--color-accent);
+  background: none;
+  height: 0;
+  margin: var(--space-xl) 0;
+}
+
+/* SECCIÓN */
+section {
+  padding: var(--space-2xl) 0;
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  section {
+    padding: var(--space-xl) 0;
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  section {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* TÍTULO DE SECCIÓN */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.section-title h2 {
+  margin-bottom: var(--space-md);
+}
+
+.section-title p {
+  font-size: var(--font-size-h4);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   GRID RESPONSIVE
+   ======================================== */
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Responsive */
+@media (max-width: var(--breakpoint-desktop)) {
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   FLEX UTILITIES
+   ======================================== */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: var(--space-sm);
+}
+
+.gap-md {
+  gap: var(--space-md);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+/* ========================================
+   UTILIDADES DE ESPACIADO
+   ======================================== */
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+/* ========================================
+   UTILIDADES DE TEXTO
+   ======================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-small {
+  font-size: var(--font-size-small);
+}
+
+.text-muted {
+  color: var(--color-text-light);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-elegant {
+  font-family: var(--font-elegant);
+}
+
+/* ========================================
+   FONDO CON OVERLAY
+   ======================================== */
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.bg-overlay-light {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   SOMBRAS Y BORDES
+   ======================================== */
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.border-accent {
+  border: 2px solid var(--color-accent);
+}
+
+.border-primary {
+  border: 2px solid var(--color-primary);
+}
+
+/* ========================================
+   IMAGEN RESPONSIVE
+   ======================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-rounded {
+  border-radius: var(--radius-lg);
+}
+
+.img-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+   ======================================== */
+
+@media (max-width: var(--breakpoint-tablet)) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.125rem;
+  }
+  
+  body {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ========================================
+   UTILIDADES VARIAS
+   ======================================== */
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
