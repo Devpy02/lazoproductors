@@ -40,22 +40,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: var(--font-weight-bold);
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: var(--font-weight-bold);
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: var(--font-weight-bold);
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: var(--font-weight-semibold);
+}
+
+h6 {
+  font-size: clamp(0.9rem, 2vw, 1rem);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -84,7 +94,12 @@ a:hover {
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
-
+@media (max-width: var(--breakpoint-desktop)) {
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-lg);
+  }
+}
 @media (max-width: var(--breakpoint-tablet)) {
   .container {
     padding: 0 var(--space-md);
@@ -104,17 +119,18 @@ a:hover {
 /* BOTÓN GENÉRICO */
 .btn {
   display: inline-block;
-  padding: var(--space-sm) var(--space-lg);
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   font-family: var(--font-accent);
-  font-size: var(--font-size-small);
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -150,6 +166,13 @@ a:hover {
 
 .btn-accent:hover {
   background-color: var(--color-accent-light);
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .btn {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* TARJETA */
@@ -207,13 +230,30 @@ section {
 
 .section-title h2 {
   margin-bottom: var(--space-md);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
 }
 
 .section-title p {
-  font-size: var(--font-size-h4);
+  font-size: clamp(1rem, 3vw, 1.25rem);
   color: var(--color-text-light);
   max-width: 600px;
   margin: 0 auto;
+}
+
+@media (max-width: var(--breakpoint-tablet)) {
+  .section-title {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-title h2 {
+    margin-bottom: var(--space-sm);
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .section-title {
+    margin-bottom: var(--space-md);
+  }
 }
 
 /* ========================================
