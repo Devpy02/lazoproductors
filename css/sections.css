@@ -113,12 +113,18 @@
 }
 
 @media (max-width: var(--breakpoint-mobile)) {
+  .navbar {
+    padding: var(--space-xs) 0;
+  }
+
   .logo {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .menu-toggle {
     font-size: 1.25rem;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -264,16 +270,17 @@
 
 @media (max-width: var(--breakpoint-mobile)) {
   .don-pedro .grid {
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
 
   .stats {
-    padding-top: var(--space-md);
-    margin-top: var(--space-md);
+    padding-top: var(--space-sm);
+    margin-top: var(--space-sm);
+    gap: var(--space-sm);
   }
 
   .stat h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -443,6 +450,21 @@
   }
 
   .activity-card h4 {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: var(--breakpoint-mobile)) {
+  .activity-card {
+    padding: var(--space-sm);
+  }
+
+  .activity-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .activity-card h4 {
     font-size: 1rem;
   }
 
@@ -493,7 +515,7 @@
 
 @media (max-width: var(--breakpoint-mobile)) {
   .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: var(--space-xs);
   }
 }
@@ -510,6 +532,7 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  width: 100%;
 }
 
 .carousel-track {
@@ -622,8 +645,8 @@
 
 @media (max-width: var(--breakpoint-mobile)) {
   .carousel-track {
-    gap: var(--space-sm);
-    padding: var(--space-sm);
+    gap: var(--space-xs);
+    padding: 0;
   }
 
   .testimonial-card {

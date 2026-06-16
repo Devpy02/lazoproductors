@@ -116,6 +116,9 @@ a:hover {
 @media (max-width: var(--breakpoint-mobile)) {
   .container {
     padding: 0 var(--space-sm);
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
   }
 }
 
