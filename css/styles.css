@@ -304,7 +304,7 @@ section {
 }
 
 /* Responsive */
-@media (max-width: var(--breakpoint-desktop)) {
+@media (max-width: 1200px) {
   .grid-6 {
     grid-template-columns: repeat(3, 1fr);
   }
